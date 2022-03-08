@@ -1,0 +1,54 @@
+<%- include('../partials/header', {title:"setReminder"}) -%>
+<%- include('../partials/navbar', {title:"setReminder"}) -%>
+
+    <h1>Remind Yourself</h1>
+
+    <div class="dropdown">
+
+      <div class="button">
+<h3> Method of contact<h3>
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Email
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+  </div>
+  <br>
+  <div class="button2">
+<h3> Date<h3>
+<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Mon, Feb 14th
+</a>
+
+<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+<a class="dropdown-item" href="#">Action</a>
+<a class="dropdown-item" href="#">Another action</a>
+<a class="dropdown-item" href="#">Something else here</a>
+</div>
+</div>
+<br>
+<div class="button3">
+<h3> Time<h3>
+<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+7pm
+</a>
+
+<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+<a class="dropdown-item" href="#">Action</a>
+<a class="dropdown-item" href="#">Another action</a>
+<a class="dropdown-item" href="#">Something else here</a>
+</div>
+</div>
+<br>
+<form action="/setReminder" method="POST">
+  <label for="subject">Subject:</label>
+  <input type="text" id="subject" name="subject" value=""><br>
+  <label for="message">Message:</label>
+  <input type="text" id="message" name="message" value=""><br>
+  <input type="submit" value="Set Reminder">
+  </form>
+</div>
