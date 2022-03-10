@@ -58,7 +58,7 @@ router.get('/auth/google/callback',
   }),
   function(request, response) {
     console.log(userProfile);
-    response.redirect('/');
+    response.redirect('/setReminder');
   });
 
 router.get("/auth/logout", (request, response) => {

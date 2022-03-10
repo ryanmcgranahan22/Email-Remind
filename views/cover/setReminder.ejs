@@ -5,50 +5,41 @@
 
     <div class="dropdown">
 
-      <div class="button">
-<h3> Method of contact<h3>
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Email
-  </a>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-  </div>
-  <br>
   <div class="button2">
 <h3> Date<h3>
-<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-Mon, Feb 14th
-</a>
 
-<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-</div>
+<select name="date" id="date">
+  <option value="Mon, Mar 7th">Mon, Mar 7th</option>
+  <option value="Tue, Mar 8th">Tue, Mar 8th</option>
+  <option value="Wed, Mar 9th">Wed, Mar 9th</option>
+  <option value="Thu, Mar 10th">Thu, Mar 10th</option>
+</select>
 </div>
 <br>
 <div class="button3">
+  <br>
 <h3> Time<h3>
-<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-7pm
-</a>
 
-<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-</div>
+  <select name="time" id="time">
+    <option value="1pm">1pm</option>
+    <option value="2pm">2pm</option>
+    <option value="3pm">3pm</option>
+    <option value="4pm">4pm</option>
+  </select>
+
 </div>
 <br>
+<br>
+
+
 <form action="/setReminder" method="POST">
-  <label for="subject">Subject:</label>
+  <label for="subject">&nbsp&nbspSubject:</label>
   <input type="text" id="subject" name="subject" value=""><br>
   <label for="message">Message:</label>
   <input type="text" id="message" name="message" value=""><br>
+  <br>
   <input type="submit" value="Set Reminder">
   </form>
+
 </div>
