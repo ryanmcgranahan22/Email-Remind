@@ -14,12 +14,14 @@ app.set('view engine', 'ejs'); //specify templating library
 
 app.use(require('./controllers/auth'));
 app.use(require('./controllers/setReminder'));
-app.use(require('./controllers/home'));
+app.use(require('./controllers/index'));
 app.use(require('./controllers/archive'));
 app.use(require('./controllers/logout'));
+
+
 
 //..............Start the server...............................//
 const port = process.env.PORT || 3000;
 app.listen(port, function() {
-  console.log('Server started at http://localhost:'+port+'/home')
+  console.log('Server started at http://localhost:'+port+'.')
 });

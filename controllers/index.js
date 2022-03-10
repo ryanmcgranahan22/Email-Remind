@@ -1,10 +1,10 @@
 const express = require('express'),
   router = express.Router();
 
-router.get('/home', function(request, response) {
+router.get('/', function(request, response) {
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
-  response.render("cover/home");
+  response.render("cover/index");
 });
 
 router.get('/error', function(request, response) {
