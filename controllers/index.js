@@ -17,6 +17,14 @@ router.get('/error', function(request, response) {
     '500': "Server problem"
   }
 
+  router.get('/login', function(request, response) {
+    response.status(200);
+    response.setHeader('Content-Type', 'text/html')
+    response.render("login", {
+      user: request.user
+    });
+  });
+
   response.status(errorCode);
   response.setHeader('Content-Type', 'text/html')
   response.render("error", {

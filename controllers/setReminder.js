@@ -6,14 +6,14 @@ const express = require('express'),
 
   router.get('/reminder/:subject', function(request, response) {
     let subject = request.params.subject;
-
     let reminder = Reminder.getReminder(subject);
-
-
     if(reminder){
       response.status(200);
       response.setHeader('Content-Type', 'text/html')
-
+      response.render("cover/archive",{
+        user: request.user,
+        reminder: reminder
+      });
     }else{
       response.redirect('/error?code=404');
       console.log(reminder)
@@ -24,6 +24,19 @@ const express = require('express'),
       response.status(200);
       response.setHeader('Content-Type', 'text/html')
       response.render("cover/setReminder");
+  });
+
+  router.post('/setReminder', function(request, response) {
+      let subject = request.body.subject;
+      let message = request.body.message;
+      if(subject&&message){
+        Reminder.createReminder(subject, message);
+        response.status(200);
+        response.setHeader('Content-Type', 'text/html')
+        response.redirect("/reminder/"+subject);
+      }else{
+        response.redirect('/error?code=400');
+      }
   });
 
 router.get('/error', function(request, response) {
@@ -44,23 +57,6 @@ router.get('/error', function(request, response) {
   });
 });
 
-router.get('/setReminder', function(request, response) {
-    response.status(200);
-    response.setHeader('Content-Type', 'text/html')
-    response.render("reminder/setReminder");
-});
 
-router.post('/setReminder', function(request, response) {
-    let subject = request.body.subject;
-    let message = request.body.message;
-    if(subject&&message){
-      Reminder.createReminder(subject, message);
-      response.status(200);
-      response.setHeader('Content-Type', 'text/html')
-      response.redirect("/reminder/"+subject);
-    }else{
-      response.redirect('/error?code=400');
-    }
-});
 
 module.exports = router
