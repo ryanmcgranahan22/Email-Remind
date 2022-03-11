@@ -16,7 +16,6 @@ const express = require('express'),
       });
     }else{
       response.redirect('/error?code=404');
-      console.log(reminder)
     }
   });
 
@@ -29,8 +28,10 @@ const express = require('express'),
   router.post('/setReminder', function(request, response) {
       let subject = request.body.subject;
       let message = request.body.message;
-      if(subject&&message){
-        Reminder.createReminder(subject, message);
+      let date = request.body.date;
+      let time = request.body.time;
+      if(subject&&message&&date&&time){
+        Reminder.createReminder(subject, message, date, time);
         response.status(200);
         response.setHeader('Content-Type', 'text/html')
         response.redirect("/reminder/"+subject);

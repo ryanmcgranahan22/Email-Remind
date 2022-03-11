@@ -1,45 +1,38 @@
 <%- include('../partials/header', {title:"setReminder"}) -%>
 <%- include('../partials/navbar', {title:"setReminder"}) -%>
 
-    <h1>Remind Yourself</h1>
 
+    <h1>Remind Yourself</h1>
+<form action="/setReminder" method="POST">
     <div class="dropdown">
 
-
-  <div class="button2">
+<div class="button2">
 <h3> Date<h3>
 
-<select name="date" id="date">
-  <option value="Fri, Mar 11th">Fri, Mar 11th</option>
-  <option value="Sat, Mar 12th">Sat, Mar 12th</option>
-  <option value="Sun, Mar 13th">Sun, Mar 13th</option>
-  <option value="Mon, Mar 14th">Mon, Mar 14th</option>
-</select>
+  <input type="date" id="date" name="date" value="2022-03-11" min="2022-03-011" max="2026-12-31">
+
+
 </div>
 <br>
+
 <div class="button3">
-  <br>
+<br>
 <h3> Time<h3>
 
-  <select name="time" id="time">
-    <option value="1pm">9am</option>
-    <option value="2pm">10am</option>
-    <option value="3pm">11am</option>
-    <option value="4pm">12pm</option>
-  </select>
+  <input type="time" id="time" name="time" value="12:00" min="00:00" max="24:00" required>
 
 </div>
 <br>
 <br>
 
 
-<form action="/setReminder" method="POST">
+
   <label for="subject">&nbsp&nbspSubject:</label>
   <input type="text" id="subject" name="subject" value=""><br>
   <label for="message">Message:</label>
   <input type="text" id="message" name="message" value=""><br>
   <br>
-  <input type="submit" value="Set Reminder">
+<input type="submit" value="Set Reminder">
   </form>
 
 </div>
