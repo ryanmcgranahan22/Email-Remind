@@ -37,7 +37,7 @@ const express = require('express'),
         response.setHeader('Content-Type', 'text/html')
         response.redirect("/reminder/"+subject);
       }else{
-        response.redirect('/error?code=400');
+        //response.redirect('/error?code=400');
       }
   });
 
