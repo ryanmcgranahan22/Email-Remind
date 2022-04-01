@@ -23,6 +23,7 @@ const express = require('express'),
       response.status(200);
       response.setHeader('Content-Type', 'text/html')
       response.render("cover/setReminder");
+
   });
 
   router.post('/setReminder', function(request, response) {
@@ -36,7 +37,7 @@ const express = require('express'),
         response.setHeader('Content-Type', 'text/html')
         response.redirect("/reminder/"+subject);
       }else{
-        //response.redirect('/error?code=400');
+        response.redirect('/error?code=400');
       }
   });
 
