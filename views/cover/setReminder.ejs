@@ -2,6 +2,24 @@
 <%- include('../partials/navbar', {title:"setReminder"}) -%>
 
 
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script type="text/javascript">
+  function sendEmail() {
+    Email.send({
+      Host: "smtp.gmail.com",
+      Username : "emailremind1@gmail.com",
+      Password : "remind123",
+      To : 'ryan.mcgranahan22@trinityschoolnyc.org',
+      From : "emailremind1@gmail.com",
+      Subject : "subject of email",
+      Body : "body of email",
+    })
+    .then(function(message){
+      alert("mail sent successfully")
+    });
+  }
+</script>
+
     <h1>Remind Yourself</h1>
 <form action="/setReminder" method="POST">
     <div class="dropdown">
@@ -32,7 +50,5 @@
   <label for="message">Message:</label>
   <input type="text" id="message" name="message" value=""><br>
   <br>
-<input type="submit" value="Set Reminder">
+<input type="submit" value="Set Reminder" onclick="sendEmail()">
   </form>
-
-</div>

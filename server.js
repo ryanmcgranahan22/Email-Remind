@@ -16,7 +16,7 @@ app.use(require('./controllers/auth'));
 app.use(require('./controllers/setReminder'));
 app.use(require('./controllers/index'));
 app.use(require('./controllers/archive'));
-app.use(require('./controllers/logout'));
+
 
 
 
