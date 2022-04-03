@@ -42,13 +42,18 @@
 </div>
 <br>
 <br>
+<script>
+function ClearFields() {
 
-
+     document.getElementById("subject").value = "";
+     document.getElementById("message").value = "";
+}
+</script>
 
   <label for="subject">&nbsp&nbspSubject:</label>
   <input type="text" id="subject" name="subject" value=""><br>
   <label for="message">Message:</label>
   <input type="text" id="message" name="message" value=""><br>
   <br>
-<input type="submit" value="Set Reminder" onclick="sendEmail()">
+<input type="submit" value="Set Reminder" onclick="sendEmail();">
   </form>

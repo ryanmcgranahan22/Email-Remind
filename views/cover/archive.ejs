@@ -1,35 +1,18 @@
-<%- include('../partials/header', {title:"archive"}) -%>
-<%- include('../partials/navbar', {title:"archive"}) -%>
+<%- include('../partials/header', {title:"archive"}) %>
+<%- include('../partials/navbar', {title:"archive"}) %>
 
     <h1>Past Reminders</h1>
 
 
-<div class="card1">
-<div class="card bg-light text-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header">2/17 at 5pm</div>
-  <div class="card-body">
-    <h5 class="card-title">Math Homework</h5>
-    <p class="card-text">Do math homework</p>
-  </div>
-</div>
-</div>
+<% for (reminder of Object.values(reminders)){%>
 
 <div class="card1">
 <div class="card bg-light text-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header">2/15 at 11am</div>
+  <div class="card-header"><%=reminder.date + " at " + reminder.time%></div>
   <div class="card-body">
-    <h5 class="card-title">Meeting</h5>
-    <p class="card-text">Meet with English teacher</p>
+    <h5 class="card-title"><%=reminder.subject%></h5>
+    <p class="card-text"><%=reminder.message%></p>
   </div>
 </div>
 </div>
-
-<div class="card1">
-<div class="card bg-light text-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header">2/13 at 7pm</div>
-  <div class="card-body">
-    <h5 class="card-title">Homework</h5>
-    <p class="card-text">Work on physics project</p>
-  </div>
-</div>
-</div>
+<%}%>

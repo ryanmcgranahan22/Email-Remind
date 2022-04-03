@@ -1,7 +1,7 @@
 //..............Include Express..................................//
 const express = require('express');
 const ejs = require('ejs');
-
+const fs = require('fs');
 //..............Create an Express server object..................//
 const app = express();
 
@@ -17,7 +17,7 @@ app.use(require('./controllers/setReminder'));
 app.use(require('./controllers/index'));
 app.use(require('./controllers/archive'));
 
-
+let reminders = JSON.parse(fs.readFileSync('./data/reminders.json'));
 
 
 //..............Start the server...............................//
