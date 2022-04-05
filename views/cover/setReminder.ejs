@@ -1,15 +1,17 @@
-<%- include('../partials/header', {title:"setReminder"}) -%>
-<%- include('../partials/navbar', {title:"setReminder"}) -%>
+<%- include('../partials/header', {title:"setReminder"}) %>
+<%- include('../partials/navbar', {title:"setReminder"}) %>
+
 
 
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script type="text/javascript">
   function sendEmail() {
+
     Email.send({
       Host: "smtp.gmail.com",
       Username : "emailremind1@gmail.com",
       Password : "remind123",
-      To : 'ryan.mcgranahan22@trinityschoolnyc.org',
+      To : 'emailremind1@gmail.com',
       From : "emailremind1@gmail.com",
       Subject : "subject of email",
       Body : "body of email",
@@ -17,7 +19,8 @@
     .then(function(message){
       alert("mail sent successfully")
     });
-  }
+
+}
 </script>
 
     <h1>Remind Yourself</h1>
@@ -27,7 +30,7 @@
 <div class="button2">
 <h3> Date<h3>
 
-  <input type="date" id="date" name="date" value="2022-03-11" min="2022-03-011" max="2026-12-31">
+  <input type="date" id="date" name="date" value="2022-04-05" min="2022-04-05" max="2026-12-31">
 
 
 </div>

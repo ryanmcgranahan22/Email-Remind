@@ -4,17 +4,21 @@ const fs = require('fs');
 const express = require('express'),
 router = express.Router();
 
-  router.get('/setReminder', function(request, response) {
-      response.status(200);
-      response.setHeader('Content-Type', 'text/html')
-      response.render("cover/setReminder");
-  });
 
   router.get('/archive', function(request, response){
     let reminders = JSON.parse(fs.readFileSync("./data/reminders.json"));
     response.status(200);
     response.setHeader('Content-Type', 'text/html');
     response.render("cover/archive", {
+      reminders: reminders
+    })
+  });
+
+  router.get('/setReminder', function(request, response){
+    let reminders = JSON.parse(fs.readFileSync("./data/reminders.json"));
+    response.status(200);
+    response.setHeader('Content-Type', 'text/html');
+    response.render("cover/setReminder", {
       reminders: reminders
     })
   });
